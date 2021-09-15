@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Property type "
+        android:textColor="#0c0e0e"
+        android:textSize="18dp" />
+
+    <RadioGroup
+        android:id="@+id/rbGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbFlat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Flat" />
+
+        <RadioButton
+            android:id="@+id/rbHouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="House" />
+
+        <RadioButton
+            android:id="@+id/rbBungalow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Bungalow" />
+
+        <RadioButton
+            android:id="@+id/rbVilla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Villa" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/bedroom"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:text="BedRooms "
+        android:textColor="#0c0e0e"
+        android:textSize="18dp" />
+
+    <RadioGroup
+        android:id="@+id/rbBed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="One" />
+
+        <RadioButton
+            android:id="@+id/rbTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Two" />
+
+        <RadioButton
+            android:id="@+id/rbStudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Studio" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/dateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Date Time "
+        android:textColor="#0c0e0e"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/date_time_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Select date and time"
+        android:inputType="none" />
+
+    <TextView
+        android:id="@+id/textPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Price "
+        android:textColor="#0c0e0e"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Please enter price"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/furniture"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:text="Furniture types"
+        android:textColor="#0c0e0e"
+        android:textSize="18dp" />
+
+    <RadioGroup
+        android:id="@+id/rbfurniture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbFurnished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Furnished" />
+
+        <RadioButton
+            android:id="@+id/rbUnFurnished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="UnFurnished" />
+
+        <RadioButton
+            android:id="@+id/rbPartFurnished"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Part Furnished" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textNote"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Notes"
+        android:textColor="#0c0e0e"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Please enter notes"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="User Name"
+        android:textColor="#0c0e0e"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Please enter user name"
+        android:inputType="text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/proceedButton"
+            android:layout_width="157dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="120dp"
+            android:text="Submit"
+            android:textColor="@android:color/white"
+            tools:ignore="ButtonStyle" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
