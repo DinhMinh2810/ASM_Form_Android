@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="7dp"
         android:text="Property type "
         android:textColor="#0c0e0e"
         android:textSize="18dp" />
@@ -102,22 +102,41 @@
         android:textColor="#0c0e0e"
         android:textSize="18dp" />
 
+<!--    <EditText-->
+<!--        android:id="@+id/date_time_input"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:hint="Select date and time"-->
+<!--        android:inputType="none" />-->
+
     <EditText
-        android:id="@+id/date_time_input"
-        android:layout_width="match_parent"
+        android:id="@+id/disable_past_date"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Select date and time"
-        android:inputType="none" />
+        android:hint="Please select date"
+        android:textColor="#0c0e0e"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/disabletime"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="16dp"
+        android:hint="Please select time"
+        android:textColor="#0c0e0e"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textPrice"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:text="Price "
+        android:text="Price"
         android:textColor="#0c0e0e"
         android:textSize="18dp" />
 
@@ -210,14 +229,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:gravity="end"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/proceedButton"
-            android:layout_width="157dp"
-            android:layout_height="wrap_content"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
             android:layout_marginEnd="120dp"
             android:text="Submit"
             android:textColor="@android:color/white"
