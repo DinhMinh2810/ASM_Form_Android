@@ -27,7 +27,6 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     Button bProceed;
-    // four text fields
     EditText etUserName, etPrice, etNotes, date_time_in;
     RadioGroup radioGroup, radioBed;
     TextView disablePastDate, disableTime;
@@ -45,13 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
         // register buttons with their proper IDs.
         bProceed = findViewById(R.id.proceedButton);
-
-        // register all the EditText fields with their IDs.
         etUserName = findViewById(R.id.userName);
         etPrice = findViewById(R.id.price);
         etNotes = findViewById(R.id.notes);
-
-        //dropdown
         radioGroup = (RadioGroup) findViewById(R.id.rbGroup);
         radioBed = (RadioGroup) findViewById(R.id.rbBed);
 
@@ -66,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-        //time
         disablePastDate = findViewById(R.id.disable_past_date);
         disablePastDate.setInputType(InputType.TYPE_NULL);
         Calendar calendar = Calendar.getInstance();
@@ -83,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayofMonth) {
-//                        String sDate = dayofMonth + "/" + month + '/' + year;
                         CharSequence sDate = DateFormat.format("EEE, d MMM yyyy", calendar);
                         disablePastDate.setText(sDate);
                     }
@@ -183,10 +176,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, Html.fromHtml("<font color='red' ><big>" + "Please select opinions BedRooms field" + "</big></font>"), Toast.LENGTH_LONG).show();
             return false;
         }
-//        if (!disablePastDate.getText().toString().matches("")) {
-//            Toast.makeText(MainActivity.this, Html.fromHtml("<font color='red' ><big>" + "Please Date Time field" + "</big></font>"), Toast.LENGTH_LONG).show();
-//            return false;
-//        }
 
         if (disablePastDate.length() == 0) {
             Toast.makeText(MainActivity.this, Html.fromHtml("<font color='red' ><big>" + "Field Date is required" + "</big></font>"), Toast.LENGTH_LONG).show();
@@ -198,23 +187,17 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
 
-//        if (date_time_in.length() == 0) {
-//            Toast.makeText(MainActivity.this, Html.fromHtml("<font color='red' ><big>" + "Please Date Time field" + "</big></font>"), Toast.LENGTH_LONG).show();
-//            return false;
-//        }
-
         if (etPrice.length() == 0) {
             etPrice.setError("Field Monthly rent price is required");
             return false;
         }
 
         if (!etNotes.getText().toString().matches("")) {
-            if (etNotes.length() > 15) {
-                etNotes.setError("Notes just maximum 15 characters");
-            } else {
-                return true;
+            if (etNotes.length() > 30) {
+                etNotes.setError("Notes just maximum 30 characters");
+                return false;
             }
-            return false;
+
         }
 
         if (etUserName.length() == 0) {
