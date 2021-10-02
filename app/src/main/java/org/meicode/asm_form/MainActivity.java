@@ -21,18 +21,14 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     Button bProceed;
-    EditText etUserName, etPrice, etNotes, date_time_in;
+    EditText etUserName, etPrice, etNotes;
     RadioGroup radioGroup, radioBed;
     TextView disablePastDate, disableTime;
-
-    // one boolean variable to check whether all the text fields
-    // are filled by the user, properly or not.
     boolean isAllFieldsChecked = false;
 
     @Override
@@ -42,24 +38,12 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
-        // register buttons with their proper IDs.
         bProceed = findViewById(R.id.proceedButton);
         etUserName = findViewById(R.id.userName);
         etPrice = findViewById(R.id.price);
         etNotes = findViewById(R.id.notes);
         radioGroup = (RadioGroup) findViewById(R.id.rbGroup);
         radioBed = (RadioGroup) findViewById(R.id.rbBed);
-
-//        date_time_in = findViewById(R.id.date_time_input);
-//        date_time_in.setInputType(InputType.TYPE_NULL);
-
-//        date_time_in.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showDateTimeDialog(date_time_in);
-//
-//            }
-//        });
 
         disablePastDate = findViewById(R.id.disable_past_date);
         disablePastDate.setInputType(InputType.TYPE_NULL);
@@ -128,37 +112,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//    private void showDateTimeDialog(final EditText date_time_in) {
-//        final Calendar calendar = Calendar.getInstance();
-//        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
-//            @Override
-//            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-//                calendar.set(Calendar.YEAR, year);
-//                calendar.set(Calendar.MONTH, month);
-//                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-//
-//
-//                TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
-//                    @Override
-//                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-//                        calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-//                        calendar.set(Calendar.MINUTE, minute);
-//                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm");
-//                        date_time_in.setText(simpleDateFormat.format(calendar.getTime()));
-//                    }
-//                };
-//                new TimePickerDialog(MainActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false).show();
-//            }
-//        };
-//        new DatePickerDialog(MainActivity.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
-//    }
 
-
-    // function which checks all the text fields
-    // are filled or not by the user.
-    // when user clicks on the PROCEED button
-    // this function is triggered.
-    private boolean CheckAllFields() {
+    private boolean CheckAllFields()  {
         int isSelected = radioGroup.getCheckedRadioButtonId();
         int isSelectedBed = radioBed.getCheckedRadioButtonId();
 
@@ -192,17 +147,35 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
 
+        int minn = Integer.parseInt(etPrice.getText().toString());
+        int max = Integer.parseInt(etPrice.getText().toString());
+        if (minn <= 0) {
+            etPrice.setError("Value must be greater than 0");
+            return false;
+        }
+
+        if (max >= 10000) {
+            etPrice.setError("Value must be less than 10000");
+            return false;
+        }
+
         if (!etNotes.getText().toString().matches("")) {
             if (etNotes.length() > 30) {
                 etNotes.setError("Notes just maximum 30 characters");
                 return false;
             }
-
         }
 
         if (etUserName.length() == 0) {
             etUserName.setError("Field User Name field is required");
             return false;
+        }
+
+        if (!etUserName.getText().toString().matches("")) {
+            if (etUserName.length() > 20) {
+                etUserName.setError("Name just maximum 20 characters");
+                return false;
+            }
         }
 
         // after all validation return true.

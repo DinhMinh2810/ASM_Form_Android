@@ -102,14 +102,6 @@
         android:textColor="#0c0e0e"
         android:textSize="18dp" />
 
-<!--    <EditText-->
-<!--        android:id="@+id/date_time_input"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginEnd="16dp"-->
-<!--        android:hint="Select date and time"-->
-<!--        android:inputType="none" />-->
 
     <EditText
         android:id="@+id/disable_past_date"
@@ -204,8 +196,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Please enter notes"
-        android:inputType="text" />
+        android:hint="Please enter notes" />
 
     <TextView
         android:id="@+id/textName"
@@ -242,6 +233,5 @@
             tools:ignore="ButtonStyle" />
 
     </LinearLayout>
-
 
 </LinearLayout>
